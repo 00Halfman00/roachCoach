@@ -1,0 +1,12 @@
+.amountLabel, .formInput{
+  color: white;
+  margin: .25rem;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+

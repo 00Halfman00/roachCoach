@@ -1,0 +1,33 @@
+.header {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 0 1.5rem;
+  margin-top: .75rem;
+  padding-right: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  background-color: whitesmoke;
+  box-shadow: 4px 4px 10px rgb(0 0 0 /.46);
+  z-index: 10;
+}
+
+img {
+  box-sizing: border-box;
+  position: fixed;
+  top: 8rem;
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  animation: roachCoach 1s forwards;
+}
+
+@keyframes roachCoach {
+  from { opacity: 0; transform: translateX(-1000px); }
+  to{ opacity: 10; transform: translateX(0);}
+}

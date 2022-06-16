@@ -1,0 +1,6 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  padding: .25rem;
+  border-bottom: 6px dashed aqua;
+}

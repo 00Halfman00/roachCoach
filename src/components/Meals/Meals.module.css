@@ -1,0 +1,17 @@
+
+.menuCard {
+  background-color: rgb(0, 0, 0, .5);
+  position:relative;
+  top: 8rem;
+  z-index: 12;
+  animation: menuCard 1.5s forwards;
+}
+
+@keyframes menuCard {
+  from {
+    transform: translate(-80%) rotate(0)
+  }
+  to {
+    transform: translateX(75%) rotate(360deg);
+  }
+}
