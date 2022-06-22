@@ -15,3 +15,25 @@
     transform: translateX(75%) rotate(360deg);
   }
 }
+
+
+@media(max-width: 1200px) {
+  .menuCard {
+    animation: menuCard 1s reverse;
+    width: 60%;
+  }
+}
+
+@media(max-width: 1000px) {
+  .menuCard {
+    animation: menuCard 1s reverse;
+    width: 80%;
+  }
+}
+
+@media(max-width: 1000px) {
+  .menuCard {
+    animation: menuCard 1s reverse;
+    width: 100%;
+  }
+}

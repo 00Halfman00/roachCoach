@@ -1,3 +1,13 @@
+
+.h1{
+  font-family: 'Fascinate', cursive;
+  color: coral;
+  background-color: rgb(0 0 0 /.66);
+  padding: .65rem 1.5rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgb(0, 0, 0, .66);
+}
+
 .header {
   position: fixed;
   box-sizing: border-box;
@@ -7,7 +17,6 @@
   display: flex;
   padding: 0 1.5rem;
   margin-top: .75rem;
-  padding-right: 5rem;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
@@ -30,4 +39,17 @@ img {
 @keyframes roachCoach {
   from { opacity: 0; transform: translateX(-1000px); }
   to{ opacity: 10; transform: translateX(0);}
+}
+
+@media (max-width: 600px) {
+  .header{
+   font-size: x-small;
+   margin-left: 0;
+   margin-right: 0;
+   padding-left: 0;
+   padding-right: 0
+  }
+  .h1{
+    padding: 1rem 1.5rem;
+  }
 }

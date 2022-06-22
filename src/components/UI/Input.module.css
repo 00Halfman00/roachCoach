@@ -1,5 +1,8 @@
+
+.amountLabel {
+  color: rgb(245, 125, 229);
+}
 .amountLabel, .formInput{
-  color: white;
   margin: .25rem;
 }
 
@@ -10,3 +13,9 @@
   padding: 1rem;
 }
 
+.formInput {
+  width: 3rem;
+  color: black;
+  font-size: large;
+  border-radius: 8px;
+}

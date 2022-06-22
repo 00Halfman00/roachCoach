@@ -10,21 +10,20 @@
 
 .name {
   text-align: start;
-  color:rgb(144, 246, 144);
+  color:chartreuse;
 }
 .price {
-  color: rgb(245, 113, 113);
+  color: goldenrod;
   text-align: end;
 }
 
 .what {
-  color:rgb(214, 214, 237);
+  color:whitesmoke;
 }
 
 .ul {
-
   padding: 1rem;
-  border: 8px dashed goldenrod;
+  border: 8px dashed rgb(229, 101, 55);
   border-radius: 10px;
   margin: .5rem;
 }

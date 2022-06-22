@@ -5,7 +5,7 @@ const Item = (props) => {
   return (
     <li className={styles.listItem}>
       {props.children}
-      <ItemForm />
+      <ItemForm {...props}/>
     </li>
   )
 }

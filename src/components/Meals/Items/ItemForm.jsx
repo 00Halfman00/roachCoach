@@ -1,11 +1,12 @@
 import Input from "../../UI/Input";
 import styles from './ItemForm.module.css';
 
-const ItemForm = () => {
+const ItemForm = (props) => {
+  //console.log(props)
   return (
     <form className={styles.itemForm}>
-      <Input label='Amount' input = {{
-        id: 'amount',
+      <Input label='Quantity' input = {{
+        id: 'quantity' + props.id,
         type: 'number',
         defaultValue: '1',
         min: '1',
