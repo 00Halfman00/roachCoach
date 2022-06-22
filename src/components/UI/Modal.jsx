@@ -1,19 +1,30 @@
 import styles from './Modal.module.css';
 import Card from './Card';
-import { Fragment } from 'react';
+import { Fragment, useState, createContext } from 'react';
 import { createPortal } from 'react-dom';
 
-const Background = () => {
-  return <div className={styles.background}> </div>
+const modalContext = createContext({
+  modal: true,
+  customClick: () => {}
+});
+
+const Background = ({customClick}) => {
+  return <div onClick={customClick} className={styles.background}> </div>
 }
 
 const portalEl = document.getElementById('overlay');
 
 const Modal = props => {
+  const [modal, setModal] = useState(true);
+  const modalHandler = () => {
+    console.log('clicked')
+    setModal(!modal);
+  }
+
   return (
     <Fragment>
-      {createPortal(<Background />, portalEl)}
-      {createPortal(<Card className={styles.layout}>{props.children}</Card>, portalEl)}
+      {modal && createPortal(<Background customClick={modalHandler}/>, portalEl)}
+      {modal && createPortal(<Card customClick={modalHandler} className={styles.layout}>{props.children}</Card>, portalEl)}
     </Fragment>
   )
 };

@@ -1,7 +1,8 @@
 import styles from './Cart.module.css';
 import Modal from '../UI/Modal';
 
-const Cart = () => {
+const Cart = (props) => {
+  console.log(props)
   const cart = <ul className={styles['cart-ul']}>{[ {
     id: 'c3',
     name: 'pizza slice',
