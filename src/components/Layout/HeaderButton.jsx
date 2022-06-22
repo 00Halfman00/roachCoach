@@ -1,12 +1,9 @@
-import { useContext } from 'react';
-import { modalContext } from '../../App';
 import CartIcon from '../Cart/CartIcon';
 import styles from './HeaderButton.module.css';
 
-const HeaderButton = () => {
-  const ctx = useContext(modalContext);
+const HeaderButton = (props) => {
   return (
-    <button onClick={ctx.customClick2} className={styles.button}>
+    <button onClick={props.customClick} className={styles.button}>
       <span className={styles.icon}>
         <CartIcon />
       </span>

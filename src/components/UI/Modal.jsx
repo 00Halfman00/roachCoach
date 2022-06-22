@@ -1,8 +1,7 @@
 import styles from './Modal.module.css';
 import Card from './Card';
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import { createPortal } from 'react-dom';
-import { modalContext } from '../../App';
 
 const Background = ({ customClick }) => {
   return (
@@ -15,14 +14,11 @@ const Background = ({ customClick }) => {
 const portalEl = document.getElementById('overlay');
 
 const Modal = (props) => {
-  const ctx = useContext(modalContext);
   return (
     <Fragment>
-      {createPortal(<Background customClick={ctx.customClick} />, portalEl)}
+      {createPortal(<Background customClick={props.customClick} />, portalEl)}
       {createPortal(
-        <Card customClick={ctx.customClick} className={styles.layout}>
-          {props.children}
-        </Card>,
+        <Card className={styles.layout}>{props.children}</Card>,
         portalEl
       )}
     </Fragment>
