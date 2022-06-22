@@ -8,10 +8,10 @@ import Cart from './components/Cart/Cart';
 const App = () => {
   return (
     <Fragment >
+      <Cart />
       <Header />
       <main className={styles['walking-app']}>
       <Meals />
-      <Cart />
       </main>
     </Fragment>
   );

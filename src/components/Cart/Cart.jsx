@@ -1,4 +1,5 @@
 import styles from './Cart.module.css';
+import Modal from '../UI/Modal';
 
 const Cart = () => {
   const cart = <ul className={styles['cart-ul']}>{[ {
@@ -16,7 +17,9 @@ const Cart = () => {
   ].map( item => (
     <li key={item.id} id={item.id}><span>{item.name}: </span><span> ${item.price}</span></li>
   ))}</ul>;
+
   return (
+    <Modal>
     <div className={styles['cart-div']}>
       {cart}
       <div className={styles['total-div']}>
@@ -27,6 +30,7 @@ const Cart = () => {
         <button className={styles.order}>order</button>
       </div>
     </div>
+    </Modal>
   );
 };
 
