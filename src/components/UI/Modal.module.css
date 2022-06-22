@@ -16,5 +16,6 @@
   z-index: 30;
   position: fixed;
   top: 35%;
-  left: 33%
+  left: 33%;
+  width: 33%;
 }

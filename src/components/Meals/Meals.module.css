@@ -5,6 +5,7 @@
   top: 8rem;
   z-index: 12;
   animation: menuCard 1.5s forwards;
+  width: 45%
 }
 
 @keyframes menuCard {
