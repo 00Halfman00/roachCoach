@@ -2,7 +2,11 @@ import Input from "../../UI/Input";
 import styles from './ItemForm.module.css';
 
 const ItemForm = (props) => {
-  //console.log(props)
+  console.log(props)
+  const clickHandler = (ev) => {
+    ev.preventDefault();
+  }
+
   return (
     <form className={styles.itemForm}>
       <Input label='Quantity' input = {{
@@ -12,7 +16,7 @@ const ItemForm = (props) => {
         min: '1',
         max: '6'
       }}/>
-      <button>Add</button>
+      <button className={styles['form-input-btn']} onClick={clickHandler}>Add</button>
     </form>
   );
 };
