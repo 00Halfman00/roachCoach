@@ -3,11 +3,12 @@ import Card from '../UI/Card';
 import MenuIntro from './MenuIntro';
 import styles from './Meals.module.css';
 
-const Meals = () => {
+const Meals = (props) => {
+  //console.log(props)
   return (
     <Card className={styles.menuCard}>
       <MenuIntro />
-      <MenuItems />
+      <MenuItems cart={props.cart} setCart={props.setCart}/>
     </Card>
   );
 };

@@ -41,8 +41,8 @@
 .num {
   background-color: white;
   border-radius: 50px;
-  padding: 0 1rem;
-  text-align: start;
+  width: 100%;
+  text-align: center;
 }
 
 .cart {

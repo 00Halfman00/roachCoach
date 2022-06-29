@@ -1,24 +1,17 @@
+import { useContext } from 'react';
+import cartContext from '../store/CartContext';
 import styles from './Cart.module.css';
 import Modal from '../UI/Modal';
 
 const Cart = (props) => {
-  const cart = (
+  const ctx = useContext(cartContext);
+  //console.log(ctx)
+  //console.log('jim', props)
+  const cart1 = (
     <ul className={styles['cart-ul']}>
-      {[
-        {
-          id: 'c3',
-          name: 'pizza slice',
-          what: 'slice of thin-crust, sausage pizza',
-          price: 4.99,
-        },
-        {
-          id: 'h8',
-          name: 'water',
-          what: 'ice-cold bottle of water',
-          price: 1.51,
-        },
-      ].map((item) => (
+      {props.cart.map((item) => (
         <li key={item.id} id={item.id}>
+          <span>({item.count} order/s) </span>
           <span>{item.name}: </span>
           <span> ${item.price}</span>
         </li>
@@ -29,9 +22,9 @@ const Cart = (props) => {
   return (
     <Modal customClick={props.customClick}>
       <div className={styles['cart-div']}>
-        {cart}
+        {cart1}
         <div className={styles['total-div']}>
-          <span className={styles.total}>Total: $6.50</span>
+          <span className={styles.total}>Total: ${ctx.total}</span>
         </div>
         <div className={styles['btn-action']}>
           <button onClick={props.customClick} className={styles.cancel}>
