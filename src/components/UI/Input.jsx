@@ -3,7 +3,7 @@ import styles from './Input.module.css';
 const Input = (props) => {
   //console.log(props)
   const inputHandler = (ev) => {
-    console.log('input: ', ev.target.value, props)
+    //console.log('input: ', ev.target.value, props)
     props.setQuantity(+ev.target.value)
   }
 

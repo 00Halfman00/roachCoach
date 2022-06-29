@@ -4,15 +4,13 @@ import styles from './ItemForm.module.css';
 import cartContext from '../../store/CartContext';
 
 const ItemForm = (props) => {
-  //need this quanity value at cart
   const [quantity, setQuantity] = useState(1);
-  //console.log(props.cart);
   const ctx = useContext(cartContext);
 
   const clickHandler = (ev) => {
     ev.preventDefault();
     let num;
-
+    let amount = quantity;
     if (props.cart[0]) {
       const container = [];
       for (let i = 0; i < props.cart.length; ++i) {
@@ -20,9 +18,11 @@ const ItemForm = (props) => {
           container[container.length] = props.cart[i];
         }
         if (props.cart[i].id === props.id) {
-          console.log(props.name);
           num = props.cart[i].count + 1;
-          console.log(num);
+          amount = props.cart[i].quantity + quantity;
+          setQuantity(() => {
+            return props.cart[i].quantity + quantity;
+          })
         }
         if (!num) {
           num = 1;
@@ -37,6 +37,7 @@ const ItemForm = (props) => {
             price: props.price,
             what: props.what,
             count: num,
+            quantity: amount
           },
           ...container,
         ];
@@ -50,13 +51,13 @@ const ItemForm = (props) => {
             price: props.price,
             what: props.what,
             count: 1,
+            quantity: amount
           },
         ];
       });
     }
 
     let tmp = ctx.total + props.price * quantity + '';
-    console.log(tmp);
     let money = '';
     for (let j = 0; j < tmp.length; ++j) {
       money += tmp[j];
@@ -76,8 +77,6 @@ const ItemForm = (props) => {
     });
   };
 
-  //const {cart, setCart} = useContext(cartContext);
-  //console.log(cart, setCart)
   return (
     <form className={styles.itemForm}>
       <Input

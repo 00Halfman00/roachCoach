@@ -1,12 +1,8 @@
-import { useContext } from 'react';
 import cartContext from '../store/CartContext';
 import styles from './Cart.module.css';
 import Modal from '../UI/Modal';
 
 const Cart = (props) => {
-  const ctx = useContext(cartContext);
-  //console.log(ctx)
-  //console.log('jim', props)
   const cart1 = (
     <ul className={styles['cart-ul']}>
       {props.cart.map((item) => (
@@ -14,6 +10,7 @@ const Cart = (props) => {
           <span>({item.count} order/s) </span>
           <span>{item.name}: </span>
           <span> ${item.price}</span>
+          <span>  (quantity: {item.quantity})</span>
         </li>
       ))}
     </ul>
@@ -24,7 +21,7 @@ const Cart = (props) => {
       <div className={styles['cart-div']}>
         {cart1}
         <div className={styles['total-div']}>
-          <span className={styles.total}>Total: ${ctx.total}</span>
+          <span className={styles.total}>Total: ${props.total}</span>
         </div>
         <div className={styles['btn-action']}>
           <button onClick={props.customClick} className={styles.cancel}>
